@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const REST_API_BASE_URL = 'https://your-tunnel-url.trycloudflare.com/api/employees';
+const REST_API_BASE_URL = 'https://york-lovers-atomic-formats.trycloudflare.com/api/employees';;
 
 export const getAllDepartments = () => axios.get(DEPARTMENT_REST_API_BASE_URL);
 

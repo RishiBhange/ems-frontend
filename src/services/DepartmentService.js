@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const DEPARTMENT_REST_API_BASE_URL = 'http://3.110.128.108:8080/api/departments'
+const REST_API_BASE_URL = 'https://york-lovers-atomic-formats.trycloudflare.com/api/employees';;
 
 export const getAllDepartments = () => axios.get(DEPARTMENT_REST_API_BASE_URL);
 

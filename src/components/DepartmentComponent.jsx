@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { createDepartment, getDepartmentById, updateDepartment } from '../services/DepartmentService';
 import { useNavigate, useParams } from 'react-router-dom';
-import './ComponentStyles.css'
+import '../services/ComponentStyles.css';
 
 const DepartmentComponent = () => {
 

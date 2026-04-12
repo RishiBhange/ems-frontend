@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { deleteEmployee, listEmployees } from '../services/EmployeeService'
 import { useNavigate } from 'react-router-dom'
+import './ComponentStyles.css'
 
 const ListEmployeeComponent = () => {
 
@@ -19,6 +20,7 @@ const ListEmployeeComponent = () => {
             console.error(error);
         })
     }
+    
     function addNewEmployee(){
         navigator('/add-employee')
     }
@@ -37,41 +39,59 @@ const ListEmployeeComponent = () => {
         })
     }
 
-  return (
-    <div className='container'>
-
-        <h2 className='text-center'>List of Employees</h2>
-        <button className='btn btn-primary mb-2' onClick={addNewEmployee}>Add Employee</button>
-        <table className='table table-striped table-bordered'>
-            <thead>
-                <tr>
-                    <th>Employee Id</th>
-                    <th>Employee First Name</th>
-                    <th>Employee Last Name</th>
-                    <th>Employee Email Id</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    employees.map(employee => 
-                        <tr key={employee.id}>
-                            <td>{employee.id}</td>
-                            <td>{employee.firstName}</td>
-                            <td>{employee.lastName}</td>
-                            <td>{employee.email}</td>
-                            <td>
-                                <button className='btn btn-info' onClick={() => updateEmployee(employee.id)}>Update</button>
-                                <button className='btn btn-danger' onClick={() => removeEmployee(employee.id)}
-                                    style={{marginLeft: '10px'}}
-                                >Delete</button>
-                            </td>
-                        </tr>)
-                }
-            </tbody>
-        </table>
-    </div>
-  )
+    return (
+        <div className='modern-container'>
+            <div className='modern-card'>
+                <div className='card-header-gradient'>
+                    <h2 className='modern-title'>👥 Employee Directory</h2>
+                    <button className='btn-add-modern' onClick={addNewEmployee}>
+                        <span className='btn-icon'>+</span>
+                        Add Employee
+                    </button>
+                </div>
+                
+                <div className='table-container'>
+                    <table className='modern-table'>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                employees.map(employee =>
+                                    <tr key={employee.id} className='table-row-hover'>
+                                        <td>{employee.id}</td>
+                                        <td>{employee.firstName}</td>
+                                        <td>{employee.lastName}</td>
+                                        <td className='email-cell'>{employee.email}</td>
+                                        <td>
+                                            <div className='action-buttons'>
+                                                <button 
+                                                    onClick={() => updateEmployee(employee.id)} 
+                                                    className='btn-update'>
+                                                    ✏️ Update
+                                                </button>
+                                                <button 
+                                                    onClick={() => removeEmployee(employee.id)} 
+                                                    className='btn-delete'>
+                                                    🗑️ Delete
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                )
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default ListEmployeeComponent

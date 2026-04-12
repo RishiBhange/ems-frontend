@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { deleteEmployee, listEmployees } from '../services/EmployeeService'
 import { useNavigate } from 'react-router-dom'
-import '../services/ComponentStyles.css';
+import '../ComponentStyles.css';
 
 const ListEmployeeComponent = () => {
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { deleteDepartment, getAllDepartments } from '../services/DepartmentService';
 import { Link, useNavigate } from 'react-router-dom';
-import '../services/ComponentStyles.css';
+import '../ComponentStyles.css';
 
 const ListDepartmentComponent = () => {
 

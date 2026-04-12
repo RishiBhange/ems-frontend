@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const DEPARTMENT_REST_API_BASE_URL = 'https://mhz-affair-gold-yes.trycloudflare.com//api/departments';
+const DEPARTMENT_REST_API_BASE_URL = 'https://mhz-affair-gold-yes.trycloudflare.com/api/departments';
 
 export const getAllDepartments = () => axios.get(DEPARTMENT_REST_API_BASE_URL);
 

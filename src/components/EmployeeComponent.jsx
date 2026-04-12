@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { createEmployee, getEmployee, updateEmployee } from '../services/EmployeeService'
 import { useNavigate, useParams } from 'react-router-dom';
 import { getAllDepartments } from '../services/DepartmentService';
-import './ComponentStyles.css'
+import '../services/ComponentStyles.css';
 
 const EmployeeComponent = () => {
 
